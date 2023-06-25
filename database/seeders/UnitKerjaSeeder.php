@@ -19,19 +19,19 @@ class UnitKerjaSeeder extends Seeder
         ]);
 
         UnitKerja::create([
-            'nama_unit_kerja' => 'UPT2 2',
+            'nama_unit_kerja' => 'UPT 2',
         ]);
 
         UnitKerja::create([
-            'nama_unit_kerja' => 'UPT2 3',
+            'nama_unit_kerja' => 'UPT 3',
         ]);
 
         UnitKerja::create([
-            'nama_unit_kerja' => 'UPT2 4',
+            'nama_unit_kerja' => 'UPT 4',
         ]);
 
         UnitKerja::create([
-            'nama_unit_kerja' => 'UPT2 5',
+            'nama_unit_kerja' => 'UPT 5',
         ]);
 
         UnitKerja::create([
@@ -88,6 +88,14 @@ class UnitKerjaSeeder extends Seeder
 
         UnitKerja::create([
             'nama_unit_kerja' => 'Pengedalian Pajak Daerah',
+        ]);
+
+        UnitKerja::create([
+            'nama_unit_kerja' => 'Root',
+        ]);
+
+        UnitKerja::create([
+            'nama_unit_kerja' => 'Admin',
         ]);
     }
 }
