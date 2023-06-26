@@ -71,12 +71,11 @@
                 Log in
               </button>
             </form>
-           
           </div>
         </div>
         <div class="col-lg-7 d-none d-lg-block">
-          <div id="auth-right">
-            
+          <div id="auth-right" >
+            <img style="filter: opacity(0.7) drop-shadow(0 0 0 black);" src="{{asset('images/bapenda-OPD.jpg')}}" alt="" height="auto">
           </div>
         </div>
       </div>
