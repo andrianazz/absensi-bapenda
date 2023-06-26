@@ -27,9 +27,10 @@
         <div class="col-lg-5 col-12">
           <div id="auth-left">
             <div class="auth-logo">
-              <a href="index.html"
+              {{-- <a href="index.html"
                 ><img src="{{asset('assets/compiled/svg/logo.svg')}}" alt="Logo"
-              /></a>
+              /></a> --}}
+              <h1>Absensi Bapenda</h1>
             </div>
             <h1 class="auth-title">Log in.</h1>
             <p class="auth-subtitle mb-5">

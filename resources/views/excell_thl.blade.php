@@ -1,5 +1,8 @@
 @php
-setlocale(LC_ALL, 'IND');
+setlocale(LC_ALL, 'INA');
+
+header("Content-type: application/vnd-ms-excel");
+header("Content-Disposition: attachment; filename=Data THL $unit_kerja->nama_unit_kerja.xls");
 @endphp
 <!DOCTYPE html>
 <html lang="en">
@@ -19,7 +22,7 @@ setlocale(LC_ALL, 'IND');
 
 <body>
     <div class="container-fluid" style="margin-left: 40dp; margin-right: 40dp;">
-        <table width='100%' class="mt-5 ">
+        <table class="mt-5 ">
             <tr>
                 <th width='2.90%%'></th>
                 <th width='9.78%'></th>
@@ -35,7 +38,7 @@ setlocale(LC_ALL, 'IND');
                 <td colspan="9" class="h4 font-weight-bolder"> DAFTAR TENAGA HARIAN LEPAS (THL) KANTOR BADAN PENDAPATAN DAERAH KOTA PEKANBARU</td>
             </tr>
             <tr height='24px'>
-                <td colspan="9"><br></td>
+                <td colspan="9"></td>
             </tr>
             <tr></tr>
             <tr class="text-center" style="background-color: #8EA9DB; border: 1px solid black;">
@@ -70,9 +73,7 @@ setlocale(LC_ALL, 'IND');
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script>
-        window.print();
-    </script>
+    
 </body>
 
 </html>

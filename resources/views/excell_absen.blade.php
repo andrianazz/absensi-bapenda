@@ -1,5 +1,8 @@
 @php
-setlocale(LC_ALL, 'IND');
+setlocale(LC_ALL, 'INA');
+
+header("Content-type: application/vnd-ms-excel");
+header("Content-Disposition: attachment; filename=Data Absen $unit_kerja->nama_unit_kerja.xls");
 @endphp
 <!DOCTYPE html>
 <html lang="en">
@@ -167,9 +170,6 @@ setlocale(LC_ALL, 'IND');
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
-    <script>
-        window.print();
-    </script>
 </body>
 
 </html>
