@@ -91,6 +91,13 @@
                 <span>Log</span>
               </a>
             </li> --}}
+
+            <li class="sidebar-item">
+              <a href="/logout" class="sidebar-link">
+                <i class="bi bi-journal-check"></i>
+                <span>Logout</span>
+              </a>
+            </li>
           </ul>
         </div>
       </div>
@@ -113,9 +120,8 @@
         </div>
         <div class="float-end">
           <p>
-            Crafted with
-            <span class="text-danger"><i class="bi bi-heart-fill icon-mid"></i></span>
-            by <a href="https://saugi.me">Andrian Wahyu</a>
+            Developed with
+            by <a href="https://github.com/andrianazz">Andrian Wahyu</a>
           </p>
         </div>
       </div>

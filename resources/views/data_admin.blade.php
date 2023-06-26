@@ -51,7 +51,7 @@
                             <th width="10%">No</th>
                             <th width=20%">Nama</th>
                             <th width="50%">Unit Kerja</th>
-                            <th width="20%">Aksi</th>
+                            <th class="text-center" width="20%">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -64,7 +64,7 @@
                             <td>{{ $no++ }}</td>
                             <td>{{ $admin->nama }}</td>
                             <td>{{ $admin->unitKerja->nama_unit_kerja  }}</td>
-                            <td>
+                            <td class="text-center">
                                 <a href="/edit-admin/{{$admin->id}}" class="btn icon icon-left btn-success"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle">
                                         <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                                         <polyline points="22 4 12 14.01 9 11.01"></polyline>

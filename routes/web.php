@@ -38,6 +38,7 @@ Route::get('/', function () {
 
     return view('thl', compact('users', "unit_kerja",));
 });
+
 Route::get('/add-user', UserController::class . '@addUser');
 Route::get('/edit-user/{id}', UserController::class . '@editUser');
 Route::post('/edit-user/{id}/update', UserController::class . '@updateUser');

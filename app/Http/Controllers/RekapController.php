@@ -74,7 +74,7 @@ class RekapController extends Controller
         $users = User::where('unit_kerja_id', $id)->get();
         $absensiUser = [];
 
-        $masuks = Masuk::all();
+        // $masuks = Masuk::all();
         foreach ($users as $index => $user) {
 
             for ($i = 0; $i < 5; $i++) {
@@ -99,6 +99,7 @@ class RekapController extends Controller
                 }
             }
         }
+
 
 
 

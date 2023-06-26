@@ -16,7 +16,6 @@
                         <li class="breadcrumb-item">
                             <a href="#">Admin</a>
                         </li>
-
                     </ol>
                 </nav>
             </div>
@@ -24,7 +23,7 @@
     </div>
     <section class="section">
         <div class="card">
-            <div class="card-header">Data Full Seluruh THL </div>
+            <div class="card-header">Data Full Seluruh THL</div>
             <div class="row text-center mx-4">
                 <form action="/cetak-thl" method="post">
                     @csrf
@@ -72,7 +71,7 @@
                             <th>Agama</th>
                             <th>Alamat</th>
                             <th>Unit Kerja</th>
-                            <th width=20%>Aksi</th>
+                            <th class="text-center" width=20%>Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -91,7 +90,7 @@
                             <td>{{ $user->agama }}</td>
                             <td>{{ $user->alamat }}</td>
                             <td>{{ $user->unitKerja->nama_unit_kerja  }}</td>
-                            <td>
+                            <td class="text-center">
                                 <a href="/edit-user/{{$user->id}}" class="btn icon icon-left btn-success"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-check-circle">
                                         <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"></path>
                                         <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"></path>
