@@ -104,7 +104,7 @@ setlocale(LC_ALL, 'IND');
                 <td class="text-start" style="border: 1px solid black;">{{ $user->nama }}</td>
                 <td style="border: 1px solid black;">THL</td>
                 @for($i = 0; $i < 5; $i++) 
-                    @if ($this_week[$i] == date('Y-m-d'))
+                    @if ($this_week[$i] <= date('Y-m-d'))
                         <td style="border: 1px solid black;" class="fw-bold {{ $absensiUser[$index]['masuk'][$i] != null ? 'text-success' : 'text-danger'}}">{{ $absensiUser[$index]['masuk'][$i] != null ? 'O' : 'X'}}</td>
                         <td style="border: 1px solid black;" class="fw-bold {{ $absensiUser[$index]['siang1'][$i] != null ? 'text-success' : 'text-danger'}}">{{ $absensiUser[$index]['siang1'][$i] != null ? 'O' : 'X'}}</td>
                         <td style="border: 1px solid black;" class="fw-bold {{ $absensiUser[$index]['siang2'][$i] != null ? 'text-success' : 'text-danger'}}">{{ $absensiUser[$index]['siang2'][$i] != null ? 'O' : 'X'}}</td>

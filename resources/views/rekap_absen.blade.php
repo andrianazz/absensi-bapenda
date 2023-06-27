@@ -105,7 +105,7 @@
                             <td>{{ $user->nama }}</td>
                             <td>THL</td>
                             @for($i = 0; $i < 5; $i++) 
-                            @if ($this_week[$i] == date('Y-m-d'))
+                            @if ($this_week[$i] <= date('Y-m-d'))
                             <td>{{ $absensiUser[$index]['masuk'][$i] != null ? '✔️': '❌'}}</td>
                             <td>{{ $absensiUser[$index]['siang1'][$i] != null ? '✔️': '❌'}}</td>
                             <td>{{ $absensiUser[$index]['siang2'][$i] != null ? '✔️': '❌'}}</td>
