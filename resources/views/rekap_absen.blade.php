@@ -45,19 +45,17 @@
                         </div>
 
 
+
+                        <div class="col-md-3 text-end">
+                            <input type="text" name="date_range" class="form-control flatpickr-range mb-3 flatpickr-input" placeholder="Select date.." readonly="readonly">
+                        </div>
+
                         <div class="col-md-3">
                             <div class="btn-group mb-3" role="group" aria-label="Basic example">
                                 <button type="submit" name="action" value="Excel" class="btn btn-danger">Cetak Excel</button>
                                 <button type="submit" name="action" value="PDF" class="btn btn-success">Cetak PDF</button>
                             </div>
                         </div>
-                        {{-- <div class="col-md-3 text-end">
-                            <a href="{{ url('/add-user') }}" class="btn icon icon-left btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit">
-                                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                                </svg> Tambah
-                            </a>
-                        </div> --}}
                     </div>
                 </form>
             </div>
@@ -104,19 +102,17 @@
                             <td>{{ $no++ }}</td>
                             <td>{{ $user->nama }}</td>
                             <td>THL</td>
-                            @for($i = 0; $i < 5; $i++) 
-                            @if ($this_week[$i] <= date('Y-m-d'))
-                            <td>{{ $absensiUser[$index]['masuk'][$i] != null ? '✔️': '❌'}}</td>
-                            <td>{{ $absensiUser[$index]['siang1'][$i] != null ? '✔️': '❌'}}</td>
-                            <td>{{ $absensiUser[$index]['siang2'][$i] != null ? '✔️': '❌'}}</td>
-                            <td>{{ $absensiUser[$index]['pulang'][$i] != null ? '✔️': '❌'}}</td>
-                            @else
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            <td></td>
-                            @endif
-                            @endfor
+                            @for($i = 0; $i < 5; $i++) @if ($this_week[$i] <=date('Y-m-d')) <td>{{ $absensiUser[$index]['masuk'][$i] != null ? '✔️': '❌'}}</td>
+                                <td>{{ $absensiUser[$index]['siang1'][$i] != null ? '✔️': '❌'}}</td>
+                                <td>{{ $absensiUser[$index]['siang2'][$i] != null ? '✔️': '❌'}}</td>
+                                <td>{{ $absensiUser[$index]['pulang'][$i] != null ? '✔️': '❌'}}</td>
+                                @else
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                                @endif
+                                @endfor
                         </tr>
                         @endforeach
                     </tbody>

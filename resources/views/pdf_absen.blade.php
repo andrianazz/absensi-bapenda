@@ -116,7 +116,7 @@ setlocale(LC_ALL, 'IND');
                         <td style="border: 1px solid black;"></td>
                     @endif
                 @endfor
-                <td style="border: 1px solid black;">Hadir: {{ $absensiUser[$index]['ket'] }} </td>
+                <td style="border: 1px solid black;">H: {{ $absensiUser[$index]['hadir'] }} <br> A: {{ $absensiUser[$index]['alpha']}}  </td>
             </tr>
             @endforeach
 

@@ -25,7 +25,7 @@
         <div class="card">
             <div class="card-header">Data Full Seluruh THL</div>
             <div class="row text-center mx-4">
-                <form action="/cetak-thl" method="post">
+                <form action="/cetak-thl" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-3">
@@ -42,12 +42,45 @@
                         <div class="col-md-3">
                             <div class="btn-group mb-3" role="group" aria-label="Basic example">
                                 <button type="submit" name="action" value="Excel" class="btn btn-danger">Cetak Excel</button>
-                                <button type="submit"  name="action" value="PDF" class="btn btn-success">Cetak PDF</button>
+                                <button type="submit" name="action" value="PDF" class="btn btn-success">Cetak PDF</button>
                             </div>
                         </div>
 
                         <div class="col-md-3">
+                            <button type="button" data-bs-toggle="modal" data-bs-target="#import1" class="btn icon icon-left btn-info"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-alert-circle">
+                                    <circle cx="12" cy="12" r="10"></circle>
+                                    <line x1="12" y1="8" x2="12" y2="12"></line>
+                                    <line x1="12" y1="16" x2="12.01" y2="16"></line>
+                                </svg> Import CSV
+                            </button>
+
+                            <div class="modal fade text-left" id="import1" tabindex="-1" role="dialog" aria-labelledby="myModalLabel120" aria-hidden="true">
+                                <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header bg-info">
+                                            <h5 class="modal-title white" id="myModalLabel120">Import CSV
+                                            </h5>
+                                            <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                                                <i data-feather="x"></i>
+                                            </button>
+                                        </div>
+
+                                        <div class="modal-body">
+                                            Silahkan masukan CSV yang sesuai pola yang telah disediakan.
+                                            <input type="file" name="csv_file">
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-light-secondary" data-bs-dismiss="modal">
+                                                <i class="bx bx-x d-block d-sm-none"></i>
+                                                <span class="d-none d-sm-block">Batal</span>
+                                            </button>
+                                            <button type="submit" name="action" value="import" class="btn btn-light-success">Impor</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
+
                         <div class="col-md-3 text-end">
                             <a href="{{ url('/add-user') }}" class="btn icon icon-left btn-primary"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-edit">
                                     <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
@@ -67,7 +100,7 @@
                             <th width="250px">Nama</th>
                             <th>TTL</th>
                             <th>Jenis Kelamin</th>
-                            <th >Pend. Terakhir</th>
+                            <th>Pend. Terakhir</th>
                             <th width="50px">Agama</th>
                             <th width="250px">Alamat</th>
                             <th width="250px">Unit Kerja</th>
