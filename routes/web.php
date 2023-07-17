@@ -45,6 +45,9 @@ Route::post('/edit-user/{id}/update', UserController::class . '@updateUser');
 Route::post('/add-user/store', [UserController::class, 'storeUser']);
 Route::delete('/user/{id}/delete', UserController::class . '@deleteUser');
 
+Route::get('/edit-pass-user/{id}', UserController::class . '@editPassUser');
+Route::post('/edit-pass-user/{id}/update', UserController::class . '@updatePassUser');
+
 //DATA ADMIN
 Route::get('/admin', UserController::class . '@admin');
 Route::get('/add-admin', UserController::class . '@addAdmin');

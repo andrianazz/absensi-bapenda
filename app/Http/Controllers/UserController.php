@@ -198,4 +198,25 @@ class UserController extends Controller
 
         return redirect('/admin')->with('success', 'Data berhasil dihapus');
     }
+
+    public function editPassUser($id)
+    {
+        $user = User::find($id);
+        return view('edit_pass_thl', compact(['user']));
+    }
+
+    public function updatePassUser(Request $request, $id)
+    {
+
+        $request->validate([
+            'password' => 'required',
+            'password2' => 'required|same:password'
+        ]);
+
+        $user = User::find($id);
+        $user->password = Hash::make($request->password);
+        $user->save();
+
+        return redirect('/')->with('success', 'Data berhasil diubah');
+    }
 }
