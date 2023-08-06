@@ -25,6 +25,7 @@ use Illuminate\Support\Facades\Route;
 Route::get('/login', [LoginController::class, 'index'])->name('login');
 Route::post('/login/auth', [LoginController::class, 'login']);
 Route::get('/logout', [LoginController::class, 'logout'])->name('logout');
+Route::get('/privacy', [LoginController::class, 'privacy'])->name('privacy');
 
 //DATA THL
 Route::get('/', function () {
