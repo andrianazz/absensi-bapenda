@@ -25,7 +25,7 @@
         <div class="card">
             <div class="card-header">Data Full Seluruh THL </div>
             <div class="row text-center mx-4">
-                <form action="/cetak-rekap" method="post">
+                <form action="/cetak-rekap" method="post" enctype="multipart/form-data">
                     @csrf
                     <div class="row">
                         <div class="col-md-3">

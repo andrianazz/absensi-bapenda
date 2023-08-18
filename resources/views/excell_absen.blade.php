@@ -100,14 +100,16 @@ header("Content-Disposition: attachment; filename=Data Absen $unit_kerja->nama_u
             </tr>
             @php
             $no = 1;
+            
             @endphp
             @foreach($users as $index =>$user)
             <tr class="text-center" style="border: 1px solid black;">
                 <td style="border: 1px solid black;">{{ $no++ }}</td>
                 <td class="text-start" style="border: 1px solid black;">{{ $user->nama }}</td>
                 <td style="border: 1px solid black;">THL</td>
+                
                 @for($i = 0; $i < 5; $i++) 
-                    @if ($this_week[$i] == date('Y-m-d'))
+                    @if ($this_week[$i] <= date('Y-m-d'))
                         <td style="border: 1px solid black;" class="fw-bold {{ $absensiUser[$index]['masuk'][$i] != null ? 'text-success' : 'text-danger'}}">{{ $absensiUser[$index]['masuk'][$i] != null ? 'O' : 'X'}}</td>
                         <td style="border: 1px solid black;" class="fw-bold {{ $absensiUser[$index]['siang1'][$i] != null ? 'text-success' : 'text-danger'}}">{{ $absensiUser[$index]['siang1'][$i] != null ? 'O' : 'X'}}</td>
                         <td style="border: 1px solid black;" class="fw-bold {{ $absensiUser[$index]['siang2'][$i] != null ? 'text-success' : 'text-danger'}}">{{ $absensiUser[$index]['siang2'][$i] != null ? 'O' : 'X'}}</td>
@@ -119,7 +121,7 @@ header("Content-Disposition: attachment; filename=Data Absen $unit_kerja->nama_u
                         <td style="border: 1px solid black;"></td>
                     @endif
                 @endfor
-                <td style="border: 1px solid black;">Hadir: {{ $absensiUser[$index]['ket'] }} </td>
+                <td style="border: 1px solid black;">H: {{ $absensiUser[$index]['hadir'] }}, A: {{ $absensiUser[$index]['alpha']}}  </td>
             </tr>
             @endforeach
 
