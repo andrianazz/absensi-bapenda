@@ -110,6 +110,28 @@ class LaporanController extends Controller
                 $this_week[] = date('Y-m-d', strtotime($monday . ' + ' . $i . ' days'));
             }
 
+            $start_date = date('Y-m-d');
+            if ($request->date_range != null) {
+
+                $date_range = explode(' to ', $request->date_range);
+                $start_date = date('Y-m-d', strtotime($date_range[0]));
+                $end_date = date('Y-m-d', strtotime($date_range[1]));
+            } else {
+                $currentDate = date('Y-m-d'); // Get current date
+                $monday = date('Y-m-d', strtotime('this week', strtotime($currentDate)));
+            }
+
+            $this_week = [];
+            if ($request->date_range != null) {
+                for ($i = 0; $i < 5; $i++) {
+                    $this_week[] = date('Y-m-d', strtotime($start_date . ' + ' . $i . ' days'));
+                }
+            } else {
+                for ($i = 0; $i < 5; $i++) {
+                    $this_week[] = date('Y-m-d', strtotime($monday . ' + ' . $i . ' days'));
+                }
+            }
+
 
             $absensiUser = [];
 
