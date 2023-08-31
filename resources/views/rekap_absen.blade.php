@@ -25,7 +25,7 @@
         <div class="card">
             <div class="card-header">Data Full Seluruh THL </div>
             <div class="row text-center mx-4">
-                <form action="/cetak-rekap" method="post" enctype="multipart/form-data">
+                <form action="/cetak-rekap" method="post" enctype="multipart/form-data" target="_blank">
                     @csrf
                     <div class="row">
                         <div class="col-md-3">
@@ -53,7 +53,7 @@
                         <div class="col-md-3">
                             <div class="btn-group mb-3" role="group" aria-label="Basic example">
                                 <button type="submit" name="action" value="Excel" class="btn btn-danger">Cetak Excel</button>
-                                <button type="submit" name="action" value="PDF" class="btn btn-success">Cetak PDF</button>
+                                <button type="submit" name="action" value="PDF" class="btn btn-success" >Cetak PDF</button>
                             </div>
                         </div>
                     </div>
