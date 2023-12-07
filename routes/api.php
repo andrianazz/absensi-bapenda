@@ -23,15 +23,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::apiResource("users", UserController::class);
-Route::apiResource("absensi", AbsensiController::class);
-Route::apiResource("masuk", MasukController::class);
-Route::apiResource("pulang", PulangController::class);
-Route::apiResource("siang1", Siang1Controller::class);
-Route::apiResource("siang2", Siang2Controller::class);
-Route::apiResource("unit-kerja", UnitKerjaController::class);
+Route::apiResource("users", UserController::class)>withoutMiddleware("throttle:api")
+->middleware("throttle:300:1");
+Route::apiResource("absensi", AbsensiController::class)>withoutMiddleware("throttle:api")
+->middleware("throttle:300:1");
+Route::apiResource("masuk", MasukController::class)>withoutMiddleware("throttle:api")
+->middleware("throttle:300:1");
+Route::apiResource("pulang", PulangController::class)>withoutMiddleware("throttle:api")
+->middleware("throttle:300:1");
+Route::apiResource("siang1", Siang1Controller::class)>withoutMiddleware("throttle:api")
+->middleware("throttle:300:1");
+Route::apiResource("siang2", Siang2Controller::class)>withoutMiddleware("throttle:api")
+->middleware("throttle:300:1");
+Route::apiResource("unit-kerja", UnitKerjaController::class)>withoutMiddleware("throttle:api")
+->middleware("throttle:300:1");
 
-Route::post("/login", [LoginController::class, "login"]);
-Route::post("/logout", [LoginController::class, "logout"]);
+Route::post("/login", [LoginController::class, "login"])>withoutMiddleware("throttle:api")
+->middleware("throttle:300:1");
+Route::post("/logout", [LoginController::class, "logout"])>withoutMiddleware("throttle:api")
+->middleware("throttle:300:1");
 
-Route::post('/images', [ImageController::class, 'store']);
+Route::post('/images', [ImageController::class, 'store'])>withoutMiddleware("throttle:api")
+->middleware("throttle:300:1");
