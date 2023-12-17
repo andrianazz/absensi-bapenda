@@ -3,10 +3,11 @@
 namespace App\Models;
 
 // use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Laravel\Sanctum\HasApiTokens;
+use Illuminate\Support\Facades\DB;
+use Illuminate\Notifications\Notifiable;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
-use Illuminate\Notifications\Notifiable;
-use Laravel\Sanctum\HasApiTokens;
 
 class User extends Authenticatable
 {
@@ -69,5 +70,15 @@ class User extends Authenticatable
         $user->save();
 
         return $user;
+    }
+
+    function getUserById($id)
+    {
+        return DB::table('users as u')
+            ->join('unit_kerjas as uk', 'u.unit_kerja_id', '=', 'uk.id')
+            ->where('u.sts', '1')
+            ->where('u.id', $id)
+            ->select('u.*', 'uk.nama_unit_kerja')
+            ->first();
     }
 }
